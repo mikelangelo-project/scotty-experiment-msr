@@ -1,0 +1,26 @@
+stages:
+  - run
+  - result
+  - clean
+
+scotty-run:
+  stage: run
+  script:
+    - printenv
+    - scotty experiment schedule
+  tags:
+    - scotty
+  
+scotty-result:
+  stage: result
+  script:
+    - scotty experiment results
+  tags:
+    - scotty
+  
+scotty-clean:
+  stage: clean
+  script:
+    - scotty experiment clean
+  tags:
+    - scotty
