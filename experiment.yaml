@@ -1,0 +1,15 @@
+description: This is my experiment
+tags:
+  - demo
+resource:
+  - name: demo_resource
+    generator: demo
+    params: 
+      servers: 2
+workloads:
+  - name: demo_workload
+    generator: demo
+    params:
+      greeting: "Hallo"
+    resource:
+      mongo: demo_resource
