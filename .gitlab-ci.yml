@@ -7,7 +7,7 @@ scotty-run:
   stage: run
   script:
     - printenv
-    - echo $CI_REPOSITORY_URL
+    - echo $PASSWORD
     - scotty experiment schedule
   tags:
     - scotty
