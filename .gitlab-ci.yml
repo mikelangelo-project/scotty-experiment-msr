@@ -6,8 +6,6 @@ stages:
 scotty-run:
   stage: run
   script:
-    - printenv
-    - echo $PASSWORD
     - scotty experiment schedule
   tags:
     - scotty
