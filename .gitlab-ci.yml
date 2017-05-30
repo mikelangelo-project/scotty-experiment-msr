@@ -8,6 +8,7 @@ scotty-prepare:
   stage: prepare
   script:
     - echo "prepare experiment and resources"
+    - git fetch
   tags:
     - scotty-gate
   
