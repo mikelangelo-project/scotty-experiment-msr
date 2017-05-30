@@ -1,25 +1,33 @@
 stages:
-  - run
-  - result
+  - prepare
+  - execute
+  - results
   - clean
 
-scotty-run:
-  stage: run
+scotty-prepare:
+  stage: prepare
   script:
-    - scotty experiment schedule
+    - echo "prepare experiment and resources"
   tags:
-    - scotty
+    - scotty-gate
   
-scotty-result:
-  stage: result
+scotty-execute:
+  stage: execute
   script:
-    - scotty experiment results
+    - echo "execute experiment and run workloads"
   tags:
-    - scotty
-  
+    - scotty-gate
+
+scotty-results:
+  stage: results
+  script:
+    - echo "collect results from experiments"
+  tags:
+    - scotty-gate
+
 scotty-clean:
   stage: clean
   script:
-    - scotty experiment clean
+    - echo "clean experiments and resources"
   tags:
-    - scotty
+    - scotty-gate
