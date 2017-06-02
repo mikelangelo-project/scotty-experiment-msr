@@ -3,8 +3,8 @@ stages:
   - result
   - cleanup
 
-scotty-prepare:
-  stage: prepare
+scotty-perform:
+  stage: perform
   script:
     - echo "exec: scotty experiment perform"
     - mkdir ./scotty #later from perform
