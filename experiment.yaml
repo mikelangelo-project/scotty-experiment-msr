@@ -1,7 +1,7 @@
 description: This is my experiment
 tags:
   - demo
-resource:
+resources:
   - name: demo_resource
     generator: git@gitlab.gwdg.de:scotty/resource/demo:master
     params: 
