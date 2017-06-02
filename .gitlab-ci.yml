@@ -1,27 +1,29 @@
 stages:
-  - prepare
-  - execute
-  - results
-  - clean
+  - perform
+  - result
+  - cleanup
 
 scotty-prepare:
   stage: prepare
   script:
-    - echo "prepare experiment and resources" > test.file
+    - echo "exec: scotty experiment perform"
+    - mkdir ./scotty #later from perform
+    - echo "all informations from experiment, resources and workloads" > ./scotty/info.txt #example
     - git fetch
   artifacts:
     expire_in: "1 hrs"
     paths:
-      - test.file
+      - ./scotty
   tags:
     - runner
   environment:
     name: scotty
-  
-scotty-execute:
-  stage: execute
+
+scotty-result:
+  stage: result
   script:
-    - echo "execute experiment and run workloads"
+    - echo "exec: scotty experiment result"
+    - cat ./scotty/info.txt
   tags:
     - runner
   dependencies:
@@ -29,21 +31,11 @@ scotty-execute:
   environment:
     name: scotty
 
-scotty-results:
-  stage: results
+scotty-cleanup:
+  stage: cleanup
   script:
-    - echo "collect results from experiments"
-  tags:
-    - runner
-  dependencies:
-    - scotty-prepare
-  environment:
-    name: scotty
-
-scotty-clean:
-  stage: clean
-  script:
-    - echo "clean experiments and resources"
+    - echo "exec: scotty experiment cleanup"
+    - cat ./scotty/info.txt
   tags:
     - runner
   dependencies:
