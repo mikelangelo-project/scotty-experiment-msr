@@ -3,12 +3,12 @@ tags:
   - demo
 resource:
   - name: demo_resource
-    generator: https://gitlab.gwdg.de/scotty/resource/demo
+    generator: https://gitlab.gwdg.de/scotty/resource/demo:master
     params: 
       servers: 2
 workloads:
   - name: demo_workload
-    generator: https://gitlab.gwdg.de/scotty/workload/demo
+    generator: https://gitlab.gwdg.de/scotty/workload/demo:master
     params:
       greeting: "Hallo"
     resource:
