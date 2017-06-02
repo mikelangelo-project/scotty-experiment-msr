@@ -6,7 +6,7 @@ stages:
 scotty-perform:
   stage: perform
   script:
-    - echo "exec: scotty experiment perform"
+    - echo "exec scotty experiment perform"
     - mkdir ./scotty #later from perform
     - echo "all informations from experiment, resources and workloads" > ./scotty/info.txt #example
     - git fetch
@@ -22,23 +22,23 @@ scotty-perform:
 scotty-result:
   stage: result
   script:
-    - echo "exec: scotty experiment result"
+    - echo "exec scotty experiment result"
     - cat ./scotty/info.txt
   tags:
     - runner
   dependencies:
-    - scotty-prepare
+    - scotty-perform
   environment:
     name: scotty
 
 scotty-cleanup:
   stage: cleanup
   script:
-    - echo "exec: scotty experiment cleanup"
+    - echo "exec scotty experiment cleanup"
     - cat ./scotty/info.txt
   tags:
     - runner
   dependencies:
-    - scotty-prepare
+    - scotty-perform
   environment:
     name: scotty
