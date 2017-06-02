@@ -10,6 +10,7 @@ scotty-prepare:
     - echo "prepare experiment and resources" > test.file
     - git fetch
   artifacts:
+    expire_in: "1 hrs"
     paths:
       - test.file
   tags:
@@ -23,6 +24,8 @@ scotty-execute:
     - echo "execute experiment and run workloads"
   tags:
     - runner
+  dependencies:
+    - scotty-prepare
   environment:
     name: scotty
 
@@ -32,6 +35,8 @@ scotty-results:
     - echo "collect results from experiments"
   tags:
     - runner
+  dependencies:
+    - scotty-prepare
   environment:
     name: scotty
 
@@ -41,5 +46,7 @@ scotty-clean:
     - echo "clean experiments and resources"
   tags:
     - runner
+  dependencies:
+    - scotty-prepare
   environment:
     name: scotty
