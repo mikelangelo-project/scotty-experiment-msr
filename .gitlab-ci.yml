@@ -7,9 +7,11 @@ stages:
 scotty-prepare:
   stage: prepare
   script:
-    - echo "prepare experiment and resources"
-    - sleep 60
+    - echo "prepare experiment and resources" > test.file
     - git fetch
+  artifacts:
+    paths:
+      - test.file
   tags:
     - runner
   environment:
