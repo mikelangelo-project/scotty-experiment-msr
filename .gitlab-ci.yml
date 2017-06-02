@@ -11,7 +11,7 @@ scotty-prepare:
     - sleep 60
     - git fetch
   tags:
-    - scotty-gate
+    - runner
   environment:
     name: scotty
   
@@ -20,7 +20,7 @@ scotty-execute:
   script:
     - echo "execute experiment and run workloads"
   tags:
-    - scotty-gate
+    - runner
   environment:
     name: scotty
 
@@ -29,7 +29,7 @@ scotty-results:
   script:
     - echo "collect results from experiments"
   tags:
-    - scotty-gate
+    - runner
   environment:
     name: scotty
 
@@ -38,6 +38,6 @@ scotty-clean:
   script:
     - echo "clean experiments and resources"
   tags:
-    - scotty-gate
+    - runner
   environment:
     name: scotty
