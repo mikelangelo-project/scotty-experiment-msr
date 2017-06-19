@@ -15,7 +15,7 @@ scotty-perform:
     paths:
       - .scotty
   tags:
-    - runner
+    - scotty-agent
   environment:
     name: scotty
 
@@ -25,7 +25,7 @@ scotty-result:
     - echo "exec scotty experiment result"
     - cat .scotty/info.txt
   tags:
-    - runner
+    - scotty-agent
   dependencies:
     - scotty-perform
   environment:
@@ -37,7 +37,7 @@ scotty-cleanup:
     - echo "exec scotty experiment cleanup"
     - cat .scotty/info.txt
   tags:
-    - runner
+    - scotty-agent
   dependencies:
     - scotty-perform
   environment:
