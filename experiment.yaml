@@ -17,6 +17,6 @@ workloads:
     generator: git@gitlab.gwdg.de:scotty/workload/demo:24048ffb1297f56f1113eedeffd71e55e86f0327
     params:
       greeting: "Hallo"
-    resource:
+    resources:
       mongo: demo_resource
       mongo_static: demo_resource_static
