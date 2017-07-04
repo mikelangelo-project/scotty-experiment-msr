@@ -1,7 +1,6 @@
 stages:
   - perform
   - result
-  - cleanup
 
 scotty-perform:
   stage: perform
@@ -9,7 +8,6 @@ scotty-perform:
     - echo "exec scotty experiment perform"
     - mkdir .scotty #later from perform
     - echo "all informations from experiment, resources and workloads" > .scotty/info.txt #example
-    - git fetch
   artifacts:
     expire_in: "1 hrs"
     paths:
@@ -23,18 +21,6 @@ scotty-result:
   stage: result
   script:
     - echo "exec scotty experiment result"
-    - cat .scotty/info.txt
-  tags:
-    - scotty-agent
-  dependencies:
-    - scotty-perform
-  environment:
-    name: scotty
-
-scotty-cleanup:
-  stage: cleanup
-  script:
-    - echo "exec scotty experiment cleanup"
     - cat .scotty/info.txt
   tags:
     - scotty-agent
