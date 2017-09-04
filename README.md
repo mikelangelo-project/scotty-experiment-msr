@@ -8,9 +8,10 @@ Workloads and resources can access this files.
 Directory structure
 -------------------
 
-| Path              | Description |
-| ----------------- | ----------- |
-| ./experiment.yaml | Experiment definition, contains workload and resource definitions for the experiment. <br> Scotty also use this as a marker for the experiment root directory |
+| Path            | Description |
+| --------------- | ----------- |
+| experiment.yaml | Experiment definition, contains workload and resource definitions for the experiment. <br> Scotty also use this as a marker for the experiment root directory |
+| .gitlab-ci.yaml | Definition for the gitlab runner. (in progress) |
 
 Getting Started
 ---------------
