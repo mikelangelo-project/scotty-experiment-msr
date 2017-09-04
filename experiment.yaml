@@ -3,18 +3,18 @@ tags:
   - demo
 resources:
   - name: demo_resource
-    generator: git@gitlab.gwdg.de:scotty/resource/demo:master
+    generator: git:git@gitlab.gwdg.de:scotty/resource/demo:master
     params: 
       servers: 2
   - name: demo_resource_static
-    generator: git@gitlab.gwdg.de:scotty/resource/static:master
+    generator: git:git@gitlab.gwdg.de:scotty/resource/static:master
     params:  
       url: https://demo.resource.de
       user: <% ENV(user) %>
       password: <% ENV(password) %>
 workloads:
   - name: demo_workload
-    generator: git@gitlab.gwdg.de:scotty/workload/demo:24048ffb1297f56f1113eedeffd71e55e86f0327
+    generator: git:git@gitlab.gwdg.de:scotty/workload/demo:24048ffb1297f56f1113eedeffd71e55e86f0327
     params:
       greeting: "Hallo"
     resources:
