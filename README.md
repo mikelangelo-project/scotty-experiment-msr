@@ -12,3 +12,22 @@ Directory structure
 | ----------------- | ----------- |
 | ./experiment.yaml | Experiment definition, contains workload and resource definitions for the experiment. <br> Scotty also use this as a marker for the experiment root directory |
 
+Getting Started
+---------------
+
+Describe your experiment in the experimernt.yaml. The experiment.yaml contains the following sections
+
+| Section           | Optional | Description |
+| ----------------- | -------- | ----------- |
+| describtion       |          | Short describtion for the experiment |
+| tags              |    x     | List of tags for experiment (scotty use this for monitoring etc.) |
+| resources         |    x     | List of resource for the experiment (scotty/resource/demo for more information) |
+| workload          |          | List of workloads for the experiment (scotty/workload/demo for more information) |
+
+You can test the experiment localy with scotty
+
+    scotty experiment perform
+
+After this run you find your scotty data under the directory ./.scotty. You can clean it by calling:
+
+    scotty experiment clean
