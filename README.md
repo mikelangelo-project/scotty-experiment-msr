@@ -32,7 +32,8 @@ After this run you find your scotty data under the directory ./.scotty. You can 
 
     scotty experiment clean
     
-Sample experiment.yaml
+Sample experiment
+-----------------
 
     description: my experiment with my workload
     tags:
