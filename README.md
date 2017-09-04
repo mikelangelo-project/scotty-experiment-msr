@@ -1,7 +1,9 @@
 My experiment
 =============
 
-An experiment is the skelleton 
+An experiment is a skelleton for scotty to deploy resources and run workloads for one experiment. 
+It contains the experiment.yaml and customer directorys and files for the experiment workloads and resources.
+Workloads and resources can access this files.
 
 Directory structure
 -------------------
