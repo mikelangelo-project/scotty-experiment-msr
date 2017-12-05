@@ -3,6 +3,6 @@ tags:
   - demo
 workloads:
   - name: msr
-    generator: git:git@gitlab.gwdg.de:scotty/workload/msr.git
+    generator: git:git@gitlab.gwdg.de/scotty/workload/msr.git
     params:
       greeting: "Hello"
