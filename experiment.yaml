@@ -14,14 +14,14 @@ workloads:
   - name: demo_workload
     generator: git:git@gitlab.gwdg.de:scotty/workload/demo:master
     params:
-      greeting: "Hallo"
+      greeting: "Hello"
     resources:
       mongo: demo_resource
       mongo_static: demo_resource
   - name: demo_workload_2
     generator: git:git@gitlab.gwdg.de:scotty/workload/demo:master
     params:
-      greeting: "Hallo"
+      greeting: "Hello"
     resources:
       mongo: demo_resource_2
       mongo_static: demo_resource_2
