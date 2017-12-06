@@ -7,3 +7,4 @@ workloads:
     params:
       greeting: "Hello"
       mongo_user: <%= ENV['MONGO_USER'] %>
+      mongo_password: <%= ENV['MONGO_PASSWORD'] %>
