@@ -8,3 +8,4 @@ workloads:
       greeting: "Hello"
       mongo_user: <%= ENV['MONGO_USER'] %>
       mongo_password: <%= ENV['MONGO_PASSWORD'] %>
+      mongo_endpoint: <%= ENV['MONGO_ENDPOINT'] %>
