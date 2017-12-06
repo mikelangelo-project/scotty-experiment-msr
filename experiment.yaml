@@ -6,3 +6,4 @@ workloads:
     generator: git:git@gitlab.gwdg.de:scotty/workload/msr.git[master]
     params:
       greeting: "Hello"
+      mongo_user: <%= ENV['OS_USERNAME'] %>
