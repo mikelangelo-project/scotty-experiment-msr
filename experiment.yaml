@@ -10,4 +10,3 @@ workloads:
       mongo_password: <%= ENV['MONGO_PASSWORD'] %>
       mongo_host: <%= ENV['MONGO_HOST'] %>
       mongo_port: <%= ENV['MONGO_PORT'] %>
-      mongo_endpoint: <%= ENV['MONGO_ENDPOINT'] %>
